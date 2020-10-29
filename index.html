@@ -90,32 +90,30 @@
       </ul>
     </section>
     <!-- FUNCION DE UNA PC -->
-    <section class="content  funcion-pc" id="funcion">
+    <section class="content funcion-pc" id="funcion">
       <!--"content" es para que el contenido este centrado-->
       <h2 class="title">CÓMO FUNCIONA UNA PC</h2>
       <article class="contain">        
-        <p>
-          Al encender un computadora se carga un pequeño programa escrito en lenguaje ensamblador, la BIOS. Almacenado en una memoria ROM, contiene la configuración de los elementos hardware básicos del PC y se encarga de cargar el sistema operativo en la memoria RAM. 
-
-          El núcleo actúa de intermediario entre las aplicaciones y el hardware. El núcleo tiene como funciones básicas garantizar la carga y la ejecución de los procesos, las entradas/salidas y proponer una interfaz entre el espacio del núcleo y los programas del espacio del usuario. De esta forma, para que una aplicación sea funcional en un sistema operativo, ésta le tiene que solicitar al núcleo un espacio en memoria y acceso a otros recursos. 
-
-          Una vez cargados los sistemas operativos actuales, estos cargan a su vez los controladores de periféricos (“Drivers”) no incluidos en el núcleo y las herramientas del sistema operativo, así como otros programas configurados en el inicio. Los conceptos  relacionados son:
-
-          *Sistema de E/S, el cual consiste en un sistema de almacenamiento temporal (“caché”), una interfaz de controladores de dispositivos y otra interfaz para dispositivos concretos. El sistema operativo debe gestionar el almacenamiento temporal de E/S y servir las interrupciones de los dispositivos de E/S y que estas no interfieran de manera directa con la ejecución del procesador.
-          *HAL (siglas inglesas de Hardware Abstraction Layer) o Capa de abstracción de hardware es una aplicación que está constantemente funcionando de manera transparente al usuario (“demonio”), que permite a las aplicaciones un fácil acceso a la información sobre el hardware, de manera que puedan localizar y utilizar tal hardware independientemente del tipo de bus o dispositivo. De esta manera una Interfaz gráfica de usuario puede presentar a su usuario todos los recursos de una manera uniforme y completa
+        <div>
+          <p>Al encender un computadora se carga un pequeño programa escrito en lenguaje ensamblador, la BIOS. Almacenado en una memoria ROM, contiene la configuración de los elementos hardware básicos del PC y se encarga de cargar el sistema operativo en la memoria RAM. </p>
+          <p> El núcleo actúa de intermediario entre las aplicaciones y el hardware. El núcleo tiene como funciones básicas garantizar la carga y la ejecución de los procesos, las entradas/salidas y proponer una interfaz entre el espacio del núcleo y los programas del espacio del usuario. De esta forma, para que una aplicación sea funcional en un sistema operativo, ésta le tiene que solicitar al núcleo un espacio en memoria y acceso a otros recursos. </p>
+          <p>Una vez cargados los sistemas operativos actuales, estos cargan a su vez los controladores de periféricos (“Drivers”) no incluidos en el núcleo y las herramientas del sistema operativo, así como otros programas configurados en el inicio. Los conceptos  relacionados son:</p>
+          <p>*Sistema de E/S, el cual consiste en un sistema de almacenamiento temporal (“caché”), una interfaz de controladores de dispositivos y otra interfaz para dispositivos concretos. El sistema operativo debe gestionar el almacenamiento temporal de E/S y servir las interrupciones de los dispositivos de E/S y que estas no interfieran de manera directa con la ejecución del procesador.
+            *HAL (siglas inglesas de Hardware Abstraction Layer) o Capa de abstracción de hardware es una aplicación que está constantemente funcionando de manera transparente al usuario (“demonio”), que permite a las aplicaciones un fácil acceso a la información sobre el hardware, de manera que puedan localizar y utilizar tal hardware independientemente del tipo de bus o dispositivo. De esta manera una Interfaz gráfica de usuario puede presentar a su usuario todos los recursos de una manera uniforme y completa</p>
           
-        </p>
+        </div>
         <img src="images/img6.jpg" alt="">
       </article>
     </section>
     <!-- DRIVERS -->
     <section class="content driver">     
-        <h2>QUE ES UN DRIVER?</h2>
+        <h2 class="title">QUE ES UN DRIVER?</h2>
         <div class="contenidoDriver">
           <article class="primeraParte">
             <p>Un controlador de dispositivo o driver es un programa informático que permite al sistema operativo interactuar con un periférico, haciendo una abstracción del hardware y proporcionando una interfaz para usarlo sin necesidad de saber cómo funciona internamente el periférico. Conceptualmente se puede establecer una analogía a un manual de instrucciones que le indica al sistema operativo cómo debe controlar y comunicarse con un dispositivo en particular. Por tanto, es una pieza esencial, sin la cual no se podría usar el hardware. 
               Es importante resaltar que el software de controladores de dispositivos se ejecuta como parte del sistema operativo, con acceso sin restricciones a todo el equipo, por lo que resulta esencial que el controlador de dispositivo sea de confianza. 
-              Pueden ser de dos tipos: orientados a caracteres o bien orientados a bloques, constituyendo las conocidas unidades de disco. La diferencia fundamental entre ambos tipos de controladores es que los primeros reciben o envían la información carácter a carácter; en cambio, los controladores de 
+              Pueden ser de dos tipos: orientados a caracteres o bien orientados a bloques, constituyendo las conocidas unidades de disco. La diferencia fundamental entre ambos tipos de controladores es que los primeros reciben o envían la información carácter a carácter; en cambio, los controladores de dispositivo de bloques procesan, como su propio nombre indica, bloques de cierta longitud en bytes (sectores).
+
               </p>
               <img src="images/img7.jpg" alt="">
           </article>

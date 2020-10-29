@@ -236,15 +236,43 @@ body {
 }
 
 .contain {
-  max-width: 1055px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  color: white;
+  color: white;  
+}
+.contain div p{
+  border-bottom: orange dashed;
 }
 .contain img {
   border-radius: 15%;
   opacity: 80%;
 }
 /* PARA DRIVERS */
+
+.driver{
+background-color: rgb(32, 32, 78);
+color: white;
+}
+.driver h2{
+  box-shadow:  5px 5px 5px 5px rgb(167, 167, 212);
+}
+
+/* background: url(../images/img8.jpg) no-repeat center top;  */
+.primeraParte {
+  padding: 30px;
+}
+.primeraParte p{
+  margin-bottom: 20px;
+  color: aquamarine;
+  border: azure dashed;
+} 
+.primeraParte img{
+  opacity: 90%;
+}
+
+
+
+
 
