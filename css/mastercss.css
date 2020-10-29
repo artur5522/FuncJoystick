@@ -1,0 +1,250 @@
+/* 0 RESET -VOY A RESETEAR TODO A CERO CON EL SIGUIENTE CODIGO QUE VIENE A CONTINUACION */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* TODO ESTOS COMANDOS SE SACARON DE UNA PAGINA DE INTERNET PARA RESETEAR A CERO ABSOLUTAMENTE TODO LO QUE VIENEN POR DEFECTO EN EL NAVEGADORY HACERLO A NUESTRAMANERA */
+
+/* GENERAL */
+body {
+  text-align: center;
+  font: 300 20px/1.7 /* el 1.7 es interlineado*/ "Roboto Condensed";
+  max-height: 100%;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} /* display justify content y aling items normalmente van juntos para alinear y centrar todo*/
+
+
+.header {
+  height: 450px;
+  background: url(../images/dummy-header.jpg) no-repeat center top;
+  /*los .. son para decirle que suba un nivel en la carpeta, y el cover es para que cobra todo el ancho */
+  background-size: cover;
+}
+
+.header h1 img {
+  border-radius: 50%;
+}
+
+/* NAVEGACION */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #213447;
+}
+.navbar {
+  height: 65px;
+  background: #2c3e50;
+  border-bottom: 1px dashed #3498db;
+}
+.navbar a {
+  padding: 0 20px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font: 20px "Stint Ultra Condensed";
+}
+
+/* GENERAL A TODOS LOS QUE TIENEN CONTENIDO */
+.content {
+  padding: 50px 0;
+}
+/* GENERAL A TODOS LOS TITULOS */
+.title {
+  margin-bottom: 10px;
+  font: 60px "Stint Ultra Condensed";
+  text-transform: uppercase;
+}
+/* PARA INTRODUCCION */
+.Introduccion {
+  background: #2c3e50;
+  color: #fff;
+}
+.Introduccion p {
+  max-width: 1050px;
+  margin: auto auto;
+}
+/* PARA CONCEPTOS */
+.conceptos {
+  background: #34495e;
+  color: #fff;
+}
+
+.conceptos p {
+  max-width: 90%;
+  margin: auto auto;
+  border-bottom: 2px solid orange;
+  padding-bottom: 2px;
+}
+
+.primero {
+  display: inline-flex;
+}
+
+.primero p {
+  align-content: center;
+  padding: 20px;
+}
+.primero img {
+  border-radius: 20%;
+  max-height: 400px;
+  padding: 25px;
+}
+.primero .uno {
+  max-width: 400;
+}
+
+/* PARA FUNCION DE PC */
+.funcion-pc {
+  background: url(../images/ing-industrial1.jpg) no-repeat center top;
+  background-size: cover;
+  color: #fff;
+}
+.funcion-pc p {
+  max-width: 800px;
+}
+
+.contain {
+  max-width: 1055px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+.contain img {
+  border-radius: 15%;
+  opacity: 80%;
+}
+/* PARA DRIVERS */
+

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>SPD 2020| JOYSTICK</title>
+    <link href="https://fonts.googleapis.com/css?family=Stint+Ultra+Condensed" rel="stylesheet"  />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"  />
+    <!--son estilos de letras sacados de internet. copiar y pegar el url-->
+    <link rel="stylesheet" href="css/mastercss.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <h1>
+        <img src="images/images.jpg" alt="Joystick" />
+        <!--alt es texto alternativo por si no carga la imagen-->
+      </h1>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+      <a href=#intro>Introduccion</a>
+      <a href=#concepto>Conceptos básicos-Joystick</a>
+      <a href=#funcion>Cómo funciona una PC</a>
+      <a href="">Driver</a>
+      <a href="">Conclusiones</a>
+    </nav>
+    <!-- INTRODUCCION -->
+    <section class="content Introduccion" id="intro">
+      <h2 class="title">Introduccion</h2>
+      <p>
+        En este trabajo se estudiará el funcionamiento de un joystick y su
+        conexión con la PC a través de un Driver.
+      </p>
+      <p>
+        Para ello se investigarán brevemente conceptos básicos de los
+        movimientos físicos y electrónica de un joystick. Posteriormente, se
+        analizará el funcionamiento de una computadora, el funcionamiento de
+        drivers propiamente dicho y la transmisión de datos entre dispositivos y
+        la computadora.
+      </p>
+    </section>
+    <!-- CONCEPTOS INICIALES -->
+    <section class="content conceptos" id="concepto">
+      <h2 class="title">Conceptos básicos-Joystick</h2>
+      <p>
+        Los Joysticks toman algo enteramente físico -el movimiento de una mano,
+        el apretar un botón- y lo traducen en algo enteramente matemático -una
+        cadena de 1 y 0-. El diseño más simple de joystick, usado en los
+        primeros juegos de consola, es simplemente un switch eléctrico
+        especializado. Consiste en un palo adosado a una base plástica con una
+        funda de goma flexible. La placa de circuito está formada por
+        varios”cables impresos” que se conectan a varios terminales de contacto.
+        Los cables comunes se extienden desde estos puntos de contacto hasta la
+        computadora. Los cables impresos forman un circuito eléctrico simple
+        compuesto por varios circuitos más pequeños. Los circuitos simplemente
+        transportan electricidad de un punto de contacto a otro. Cuando el
+        joystick está en posición neutral, cuando no está empujando de una forma
+        u otra, todos los circuitos individuales menos uno están rotos. El
+        material conductor en cada cable no se conecta del todo, por lo que el
+        circuito no puede conducir electricidad. Cada sección rota está cubierta
+        con un simple botón de plástico que contiene un pequeño disco de metal.
+        Cuando se mueve la palanca en cualquier dirección, se completa el
+        circuito: mediante la conexión entre las dos secciones de cable. Cuando
+        el circuito está cerrado, la electricidad puede fluir por un cable desde
+        la computadora (o consola de juegos), a través del cable impreso y a
+        otro cable que conduce de vuelta a la computadora. </p>
+      <ul class="list-conceptosbasicos">
+        <li class="primero">         
+            <img src="images/img1.jpg" alt="" />
+            <p>El diseño más simple de joystick, usado en los primeros juegos de consola, es simplemente un switch eléctrico especializado. Consiste en un palo adosado a una base plástica con una funda de goma flexible. La placa de circuito está formada por varios”cables impresos” que se conectan a varios terminales de contacto. Los cables comunes se extienden desde estos puntos de contacto hasta la computadora.
+              Los cables impresos forman un circuito eléctrico simple compuesto por varios circuitos más pequeños. Los circuitos simplemente transportan electricidad de un punto de contacto a otro. Cuando el joystick está en posición neutral, cuando no está empujando de una forma u otra, todos los circuitos individuales menos uno están rotos. El material conductor en cada cable no se conecta del todo, por lo que el circuito no puede conducir electricidad.
+              Cada sección rota está cubierta con un simple botón de plástico que contiene un pequeño disco de metal. Cuando se mueve la palanca en cualquier dirección, se completa el circuito: mediante la conexión entre las dos secciones de cable. Cuando el circuito está cerrado, la electricidad puede fluir por un cable desde la computadora (o consola de juegos), a través del cable impreso y a otro cable que conduce de vuelta a la computadora.      
+            </p>
+          </li>
+          <li class ="primero">         
+            <img class= "uno" src="images/img2.jpg" alt="" /> 
+            <img class= "uno" src="images/img4.jpg" alt=""/>           
+          </li>
+          <li>
+            <p>Usaremos como ejemplo un joystick conectado a una placa Arduino.
+              En la imagen podemos ver lo siguiente:
+              Los pines de los cables rojo y negro son los del voltaje.
+              Los pines blanco, azul y verde son los que transmiten la información del joystick
+                Blanco: estado del switch (botón).
+                Azul: eje de las x.	
+              Verde: eje de las y.              
+            </p>        
+        </li>
+      </ul>
+    </section>
+    <!-- FUNCION DE UNA PC -->
+    <section class="content  funcion-pc" id="funcion">
+      <!--"content" es para que el contenido este centrado-->
+      <h2 class="title">CÓMO FUNCIONA UNA PC</h2>
+      <article class="contain">        
+        <p>
+          Al encender un computadora se carga un pequeño programa escrito en lenguaje ensamblador, la BIOS. Almacenado en una memoria ROM, contiene la configuración de los elementos hardware básicos del PC y se encarga de cargar el sistema operativo en la memoria RAM. 
+
+          El núcleo actúa de intermediario entre las aplicaciones y el hardware. El núcleo tiene como funciones básicas garantizar la carga y la ejecución de los procesos, las entradas/salidas y proponer una interfaz entre el espacio del núcleo y los programas del espacio del usuario. De esta forma, para que una aplicación sea funcional en un sistema operativo, ésta le tiene que solicitar al núcleo un espacio en memoria y acceso a otros recursos. 
+
+          Una vez cargados los sistemas operativos actuales, estos cargan a su vez los controladores de periféricos (“Drivers”) no incluidos en el núcleo y las herramientas del sistema operativo, así como otros programas configurados en el inicio. Los conceptos  relacionados son:
+
+          *Sistema de E/S, el cual consiste en un sistema de almacenamiento temporal (“caché”), una interfaz de controladores de dispositivos y otra interfaz para dispositivos concretos. El sistema operativo debe gestionar el almacenamiento temporal de E/S y servir las interrupciones de los dispositivos de E/S y que estas no interfieran de manera directa con la ejecución del procesador.
+          *HAL (siglas inglesas de Hardware Abstraction Layer) o Capa de abstracción de hardware es una aplicación que está constantemente funcionando de manera transparente al usuario (“demonio”), que permite a las aplicaciones un fácil acceso a la información sobre el hardware, de manera que puedan localizar y utilizar tal hardware independientemente del tipo de bus o dispositivo. De esta manera una Interfaz gráfica de usuario puede presentar a su usuario todos los recursos de una manera uniforme y completa
+          
+        </p>
+        <img src="images/img6.jpg" alt="">
+      </article>
+    </section>
+    <!-- DRIVERS -->
+    <section class="content driver">     
+        <h2>QUE ES UN DRIVER?</h2>
+        <div class="contenidoDriver">
+          <article class="primeraParte">
+            <p>Un controlador de dispositivo o driver es un programa informático que permite al sistema operativo interactuar con un periférico, haciendo una abstracción del hardware y proporcionando una interfaz para usarlo sin necesidad de saber cómo funciona internamente el periférico. Conceptualmente se puede establecer una analogía a un manual de instrucciones que le indica al sistema operativo cómo debe controlar y comunicarse con un dispositivo en particular. Por tanto, es una pieza esencial, sin la cual no se podría usar el hardware. 
+              Es importante resaltar que el software de controladores de dispositivos se ejecuta como parte del sistema operativo, con acceso sin restricciones a todo el equipo, por lo que resulta esencial que el controlador de dispositivo sea de confianza. 
+              Pueden ser de dos tipos: orientados a caracteres o bien orientados a bloques, constituyendo las conocidas unidades de disco. La diferencia fundamental entre ambos tipos de controladores es que los primeros reciben o envían la información carácter a carácter; en cambio, los controladores de 
+              </p>
+              <img src="images/img7.jpg" alt="">
+          </article>
+          <article class="segundaPArte">
+            <h3>Procesado de señales de un dispositivo de interfaz humano(HID) </h3>
+            <div>
+              <p>Antiguamente los HID delegaban su control al sistema informático, es decir el HID enviaba señales al sistema informático y éste debía procesar, controlar, filtrar y realimentar esa información y traducirla a acciones a realizar por el sistema informático. Pero con la proliferación de los estándares USB, Bluetooth y el aumento de complejidad de los dispositivos y la necesidad de no sobrecargar el bus así como de cumplir estándares, conviene procesar las señales captadas antes de ser enviadas en un formato determinado. Para entender las alternativas para procesar la información se debe explicar qué diferencias implican los dos sistemas programables por antonomasia.
+              </p>
+
+            <ul>
+              <li>
+                <p>Microprocesador: Se entiende que un microprocesador es un circuito integrado compuesto por una serie de registros, una unidad de control, una o varias unidades aritmético-lógicas y puede tener, como es el caso de las computadoras personales, una unidad en coma flotante. Para conseguir un sistema funcional de procesamiento de datos, el microprocesador en una PC, por ejemplo, debe conectarse a través de sus buses de procesador a los distintos elementos cuyas direcciones residen en el “chipset” de la “placa madre”. Estos elementos son la memoria de programa (también conocida como memoria RAM), a los dispositivos de almacenamiento (los discos duros) y a los distintos controladores de puertos de periféricos y placas integradas (como en el caso de las placas de video). </p>
+              </li>
+              <li>
+                <p>Microcontrolador: Un microcontrolador, al contrario que el microprocesador, pretende ser autónomo. Es decir, en el mismo encapsulado se incluyen las tres funcionalidades de una computadora, un procesador, memoria y unidades de entrada y salida (E/S). Además suelen contar, en función del modelo, distintos periféricos internos y memorias.
+                </p>
+              </li>
+            </ul>
+            </div>
+
+          </article>
+        </div> 
+    </section>
+    <!-- CONCLUSIONES -->
+    <section class="content conclusiones">
+      <section>
+
+      </section>
+
+
+
+
+    </section>
+  </body>
+</html>
