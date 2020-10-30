@@ -259,7 +259,6 @@ color: white;
   box-shadow:  5px 5px 5px 5px rgb(167, 167, 212);
 }
 
-/* background: url(../images/img8.jpg) no-repeat center top;  */
 .primeraParte {
   padding: 30px;
 }
@@ -271,7 +270,35 @@ color: white;
 .primeraParte img{
   opacity: 90%;
 }
+.segundaParte, .terceraParte{
+  margin: 0px 80px;
+}
 
+.segundaParte h3 , .terceraParte h3 {
+  font-size: 30px;
+  color: fff;
+  border-bottom: peru dotted;
+
+}
+.segundaParte p{
+  padding-bottom: 30px;
+}
+.segundaParte ul li{
+  display: flex;
+  border: solid salmon;  
+}
+
+.terceraParte{
+  background-image: url(../images/img9.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* .terceraParte div{
+  color: black;
+  font-weight: bolder;
+} */
 
 
 

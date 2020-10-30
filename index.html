@@ -108,7 +108,7 @@
     <!-- DRIVERS -->
     <section class="content driver">     
         <h2 class="title">QUE ES UN DRIVER?</h2>
-        <div class="contenidoDriver">
+       
           <article class="primeraParte">
             <p>Un controlador de dispositivo o driver es un programa informático que permite al sistema operativo interactuar con un periférico, haciendo una abstracción del hardware y proporcionando una interfaz para usarlo sin necesidad de saber cómo funciona internamente el periférico. Conceptualmente se puede establecer una analogía a un manual de instrucciones que le indica al sistema operativo cómo debe controlar y comunicarse con un dispositivo en particular. Por tanto, es una pieza esencial, sin la cual no se podría usar el hardware. 
               Es importante resaltar que el software de controladores de dispositivos se ejecuta como parte del sistema operativo, con acceso sin restricciones a todo el equipo, por lo que resulta esencial que el controlador de dispositivo sea de confianza. 
@@ -117,9 +117,9 @@
               </p>
               <img src="images/img7.jpg" alt="">
           </article>
-          <article class="segundaPArte">
+          <article class="segundaParte">
             <h3>Procesado de señales de un dispositivo de interfaz humano(HID) </h3>
-            <div>
+            
               <p>Antiguamente los HID delegaban su control al sistema informático, es decir el HID enviaba señales al sistema informático y éste debía procesar, controlar, filtrar y realimentar esa información y traducirla a acciones a realizar por el sistema informático. Pero con la proliferación de los estándares USB, Bluetooth y el aumento de complejidad de los dispositivos y la necesidad de no sobrecargar el bus así como de cumplir estándares, conviene procesar las señales captadas antes de ser enviadas en un formato determinado. Para entender las alternativas para procesar la información se debe explicar qué diferencias implican los dos sistemas programables por antonomasia.
               </p>
 
@@ -128,14 +128,36 @@
                 <p>Microprocesador: Se entiende que un microprocesador es un circuito integrado compuesto por una serie de registros, una unidad de control, una o varias unidades aritmético-lógicas y puede tener, como es el caso de las computadoras personales, una unidad en coma flotante. Para conseguir un sistema funcional de procesamiento de datos, el microprocesador en una PC, por ejemplo, debe conectarse a través de sus buses de procesador a los distintos elementos cuyas direcciones residen en el “chipset” de la “placa madre”. Estos elementos son la memoria de programa (también conocida como memoria RAM), a los dispositivos de almacenamiento (los discos duros) y a los distintos controladores de puertos de periféricos y placas integradas (como en el caso de las placas de video). </p>
               </li>
               <li>
-                <p>Microcontrolador: Un microcontrolador, al contrario que el microprocesador, pretende ser autónomo. Es decir, en el mismo encapsulado se incluyen las tres funcionalidades de una computadora, un procesador, memoria y unidades de entrada y salida (E/S). Además suelen contar, en función del modelo, distintos periféricos internos y memorias.
+                <p>Microcontrolador: al contrario que el microprocesador, pretende ser autónomo. Es decir, en el mismo encapsulado se incluyen las tres funcionalidades de una computadora, un procesador, memoria y unidades de entrada y salida (E/S). Además suelen contar, en función del modelo, distintos periféricos internos y memorias.
                 </p>
               </li>
             </ul>
-            </div>
-
           </article>
-        </div> 
+          <article class="terceraParte">
+            <h3>Dispositivo conectado con USB</h3>
+            <div>
+              <h4>Host</h4>
+              <p>Está a cargo del bus, debe saber qué dispositivos están en el bus y sus capacidades, además se debe asegurar que todos los dispositivos pueden recibir y enviar los datos que necesiten. Para el caso de una computadora que actúa como host USB, el hardware y el sistema operativo, a través de los “drivers”, llevan toda la carga del bus y la aplicación informática no debe preocuparse de los detalles específicos de la comunicación con el USB. El host por tanto lleva a cabo las siguientes tareas:
+                - Detectar dispositivos: En el encendido, el “Hub” informa de todos los dispositivos conectados. En un proceso llamado “enumeración” el host asigna direcciones y solicita información adicional de cada dispositivo. Si un dispositivo es apagado o conectado, el host detecta el evento y lo elimina de la lista o enumera nuevamente, según el caso.
+                - Gestionar el flujo de datos: Varios periféricos pueden querer transmitir datos al mismo tiempo. El host divide, por tanto, el tiempo disponible en segmentos y los asigna en función de las especificaciones recabadas durante la enumeración.
+                - Comprobación de errores: En la transmisión de datos, el host añade bits para la comprobación de errores. Si en el dato recibido por el periférico no se corresponde el bit de comprobación de error con su cálculo, éste no enviará la señal de reconocimiento (“acknowledge”) y el host sabrá que deberá reenviar la información. Existe también, una variante que no permite la retransmisión para mantener el ratio de transmisión constante. 
+               - Además el host puede recibir otras indicaciones de los periféricos, como que no puede enviar o recibir datos, e informar así al controlador del dispositivo sobre el problema. 
+               - Suministro de energía: El cable USB utiliza una pareja de sus cables para suministrar +5V de tensión continua. En función de si se trata de baja o alta potencia, puede suministrar desde 100mA hasta 500mA respectivamente. 
+               - Intercambio de datos con los periféricos: La tarea principal del host, puede comunicarse con los periféricos en los intervalos de tiempo o estar a la espera de solicitudes
+               </p>
+            </div>
+            <div>
+              <h4>Periféricos</h4>
+              <p>A excepción de su función al conectarse, que informa al host para que le “enumere”, el periférico debe esperar a que el host se comunique con él, para responder. El controlador USB en un periférico maneja diversas responsabilidades del hardware en función del chip. 
+                - Detectar comunicaciones dirigidas al chip: El dispositivo monitoriza la dirección del dispositivo en cada comunicación en el bus. Si no coincide con su dirección asignada, ignora la comunicación, si coincide, almacena esta información en el “buffer de recepción” y habilita la interrupción que indica que ha llegado información. En la mayoría de los chips esta función es realizada por el “hardware” y no necesita ser programada en el “firmware”. 
+                - Responder a solicitudes estándar: Cuando el dispositivo se conecta a un bus USB, debe responder a determinadas solicitudes durante la “enumeración”. La especificación USB define 11 solicitudes, tales como capacidades, status y configuración. Sin embargo el “vendor” (fabricante) puede, a su vez, definir solicitudes adicionales. 
+                - Comprobación de errores: Al igual que el host, el dispositivo añade un bit de comprobación de error. Si el dispositivo no confirma la información, el host sabrá que deberá reenviar la información. Esta función suele estar implementada en el hardware, por lo que no es necesario programarla en el “firmware”.
+                 - Gestión de energía: El dispositivo puede ser alimentado por el bus, sujeto a límites, o puede tener su propia fuente de alimentación. Si el host entra en un estado de baja potencia, cesan las comunicaciones. Si se mantiene durante, al menos, 3 milisegundos, el dispositivo deberá entrar en estado de suspensión. 
+                - Intercambio de datos con el host: Tras la “enumeración”, el dispositivo queda configurado para el host y este establecerá qué tipo de comunicación corresponde, y cuándo ocurre. Si el host envía datos al dispositivo, el dispositivo debe responder a cada intento de transferencia enviando un código de que se acepta la transmisión o de que está ocupado. Si el dispositivo envía datos al host, el dispositivo debe responder cada intento del host con los datos a enviar, con un indicador de que no hay datos que enviar o de que está ocupado.
+                </p>
+            </div>
+          </article>
+
     </section>
     <!-- CONCLUSIONES -->
     <section class="content conclusiones">
