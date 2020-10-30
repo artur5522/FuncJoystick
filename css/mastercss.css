@@ -134,7 +134,7 @@ table {
 body {
   text-align: center;
   font: 300 20px/1.7 /* el 1.7 es interlineado*/ "Roboto Condensed";
-  max-height: 100%;
+  max-height: 100%; 
 }
 
 /* HEADER */
@@ -162,6 +162,7 @@ body {
   justify-content: center;
   align-items: center;
   background: #213447;
+ 
 }
 .navbar {
   height: 65px;
@@ -174,6 +175,11 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   font: 20px "Stint Ultra Condensed";
+  transition: all 0.4s ease-in;  
+}
+
+.navbar a:hover {
+  color: salmon;
 }
 
 /* GENERAL A TODOS LOS QUE TIENEN CONTENIDO */
@@ -270,11 +276,13 @@ color: white;
 .primeraParte img{
   opacity: 90%;
 }
+
+/* PROCESANDO SEÑALES DHI */
 .segundaParte, .terceraParte{
   margin: 0px 80px;
 }
 
-.segundaParte h3 , .terceraParte h3 {
+.segundaParte h3 , .terceraParte h3, .cuartaParte h3, .quintaParte h3, .sextaParte h3 {
   font-size: 30px;
   color: fff;
   border-bottom: peru dotted;
@@ -288,18 +296,86 @@ color: white;
   border: solid salmon;  
 }
 
+/* DISPOSITIVO CONECTADO A TRAVES DE USB */
 .terceraParte{
+  margin: auto;
+ padding: 50px;
   background-image: url(../images/img9.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-/* .terceraParte div{
-  color: black;
+.terceraParte h4{  
   font-weight: bolder;
-} */
+  font-family: cursive;
+  font-size: 40px;
+} 
+/* TRANSMISION DE DATOS ENTRE PC Y COMPU */
+.cuartaParte{
+  background-image: url(../images/img10.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 40px;
+}
+
+.intro-4taparte {
+  margin: 0px 200px 50px;
+  padding: 15px;  
+}
+
+.span{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: aqua;
+}
 
 
+.desarrollo ul{
+margin-top: 25px;
+}
+.desarrollo ul img {
+  opacity: 90%;
+}
 
+/* Paso a paso de una conexión dispositivo (periférico) - host (anfitrión) */
+
+.quintaParte{
+  margin: 80px;
+}
+.quintaParte p{
+  padding-bottom: 50px;
+}
+
+.items ol li{
+  padding: 15px 0px
+}
+
+/* RETIRO DEL DISPOSITIVO */
+
+.sextaParte{
+  background: #213447;
+  padding: 20px 300px;
+  
+}
+
+
+/* PARA EL PIE */
+
+.pie{
+  background-color: rgb(66, 92, 112);
+  display: flex;
+  position: sticky;
+  bottom: 0;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  min-height: 80px;
+  color: whitesmoke;
+}
+
+.pie p{
+  border: 1px black solid;
+  padding: 4px;
+}
 
