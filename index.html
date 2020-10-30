@@ -22,8 +22,8 @@
       <a href=#intro>Introduccion</a>
       <a href=#concepto>Conceptos básicos-Joystick</a>
       <a href=#funcion>Cómo funciona una PC</a>
-      <a href="">Driver</a>
-      <a href="">Conclusiones</a>
+      <a href="#driver">Driver</a>
+      <a href="#conclusiones">Conclusiones</a>
     </nav>
     <!-- INTRODUCCION -->
     <section class="content Introduccion" id="intro">
@@ -106,7 +106,7 @@
       </article>
     </section>
     <!-- DRIVERS -->
-    <section class="content driver">     
+    <section class="content driver" id="driver">     
         <h2 class="title">QUE ES UN DRIVER?</h2>
        
           <article class="primeraParte">
@@ -157,17 +157,92 @@
                 </p>
             </div>
           </article>
+          <article class="cuartaParte">
+            <div class="intro-4taparte">
+              <h3>Transmisión de datos entre periférico y computadora  </h3>
+              <p>La comunicación se basa en el intercambio de paquetes de información, y para entender este intercambio se deben definir dos conceptos: los puntos finales (“endpoints”) y las tuberías (“pipes”).
+              </p>
+            </div>
+            <div class="desarrollo">
+              <p><span class="span"> Dispositivos puntos finales:</span> la fuente y el sumidero de datos
+                Todo el tráfico de un bus empieza o acaba en un dispositivo punto final (“device endpoint”). Siendo el punto final un bloque de memoria del chip del periférico que hace las veces de “buffer” para almacenar los datos recibidos o para los datos que esperan ser enviados. El host también almacena, de la misma forma, los datos. Sin embargo no posee puntos finales, pues sirve como iniciador y finalizador de la comunicación.
+                 Una explicación sencilla sería equiparar el punto final a un buzón de correos, el cartero virtual, que representa al host, además de la dirección del dispositivo, debe saber a qué se corresponde cada buzón, si es para recoger envíos, o es para dejar la correspondencia, además debe saber de qué tipo de envío se trata, si es de control, o si es de datos, de qué tipo de datos. 
+                Una dirección punto final consiste en un número, con un valor entre 0 y 15, y un código de dirección. Este código de dirección queda definido desde la perspectiva del host: “IN”, si envía información u “OUT”, si almacena información del host. En el caso de un punto final configurado como control, debe mantener una comunicación bidireccional, que consistiría en una pareja “IN” y “OUT” de códigos de direcciones que comparten el mismo número de punto final. Existe además otro código, “SETUP”, que hace se comporta como “OUT” especial y sirve para configurar el dispositivo. De esta forma cada transacción en el bus empieza con un paquete que contiene un número y un código de dirección. 
+                Por tanto, cada transmisión contiene una dirección de dispositivo y una dirección de punto final. Si el dispositivo, tras comprobar la dirección del dispositivo, recibe un “OUT”, almacena esta información y habilita una interrupción, si recibe un “IN” y tiene la información lista, envía los datos y habilita una interrupción en el bus.
+                </p>
+              <p> <span class="span">Tuberías:</span>
+                Antes de que la transferencia ocurra, el host y el dispositivo deben establecer una tubería. Ésta se establece durante la “enumeración” y consiste en la asociación lógica entre el punto final del dispositivo específico y el software del controlador host. El host, a su vez, puede crear o eliminar tuberías según la información tomada del dispositivo. Véase que todos los dispositivos tienen una tubería de control por defecto que usa el punto final 0.
+               </p>
+               <ul>
+                <span class="span">Tipos de tuberías:  </span>
+                 <li>
+                   <p>- Tuberías de mensajes(“Message Pipe”): bidireccionales y se usan para la configuración 
+                  </p>
+                   <img src="images/tuberia1.jpg" alt="">
+                 </li>
+                  <li>
+                    <p>- Tuberías de flujo (“Stream Pipe”): unidireccionales y se usan para el resto de comunicaciones: transmisiones Generalistas (“Bulk”), Isócronas y de Interrupción.
+                    </p>
+                    <img src="images/tuberia2.jpg" alt="">
+                  </li>
+              </ul>
 
+          </div>
+          </article>
+          <article class="quintaParte">           
+              <h3>Paso a paso de una conexión dispositivo (periférico) - host (anfitrión)
+              </h3>
+              <p>Como se ha comentado antes, para que una aplicación se pueda comunicar con un dispositivo, el host debe recabar toda la información del periférico y así, asignarle un controlador (“driver”). Y aunque no sea estrictamente necesario conocer todos los pasos para poder programar el firmware, sí que es interesante a título informativo. El proceso de enumeración sigue este orden, aunque suponerlo en la programación del firmware puede llevar a error, pues en función de la aplicación, puede haber variaciones:
+              </p>
+              <div class="items">
+                <ol>
+                  <li>1. El usuario conecta un dispositivo a un puerto USB. El hub suministrará potencia al dispositivo, que pasará a estar alimentado.
+                  </li>
+                  <li>2. El hub detecta el dispositivo. El hub monitoriza las variaciones de tensión en las líneas de datos que se producen. El hub tiene una resistencia “pull-down” de 15-25Kohms, y el dispositivo una de “pull-up” de 900-1500ohms a D+, si es un dispositivo de velocidad completa, o D-, si es de baja velocidad.
+                  </li>
+                  <li>3. El host recaba información del nuevo dispositivo. El hub utilizará su interrupción “punto final” para hacer llegar al host de que ha habido un evento. Entonces el host enviará la orden “Get_Port_Status” al hub, que responderá indicando que hay un nuevo dispositivo conectado.
+                  </li>
+                  <li>4. El hub detecta la velocidad del dispositivo. Antes del reset el periférico, el hub mide en qué línea de datos se ha producido la variación de tensión y determina la velocidad. Si fuese un dispositivo de alta velocidad se determinará en fases siguientes
+                  </li>
+                  <li>5. El hub resetea el dispositivo. Cuando el host es informado del nuevo dispositivo, su controlador envía al hub una solicitud de “Set_Port_Feature” para que se reinicie el dispositivo. El hub pondrá D- y D+ a bajo nivel durante al menos 10 ms sólo en ese puerto.
+                  </li>
+                  <li>6. El host detecta si el dispositivo es de velocidad completa o alta velocidad. Durante el reset, si el chip del dispositivo admite alta velocidad enviará una serie de comandos “Chirp J” y “Chirp K” alternados. 
+                  </li>
+                  <li>7. El hub establece una vía de señales entre el dispositivo y el bus. El host sigue enviando solicitudes de “Get_Port_Status” hasta que el dispositivo haya salido del estado reset o se agote el tiempo de reset. Cuando el hub retira el reset del dispositivo, los registros de éste se han reseteado y está listo para responder a las transferencias de control del “punto final” 0. El dispositivo puede ahora comunicarse con el host en con la dirección por defecto 00h y puede tomar hasta 100mA del bus.
+                  </li>
+                  <li>8. El host envía “Get_Descriptor” para solicitar al dispositivo el tamaño máximo del paquete de la tubería por defecto. Lo envía a la dirección del dispositivo 0 y “punto final” 0. Si hubiese varios dispositivos conectados al mismo tiempo, sólo uno respondería a esa dirección. En este punto empieza la fase “Status”
+                  </li>
+                  <li>9. El host asigna una dirección. Envía una única dirección al dispositivo mediante la orden “Set_Address”. En este punto acaba la fase de “Status” y empieza la fase “Dirección”, implementando esta nueva dirección en su sistema. Esta dirección permanecerá hasta que el dispositivo se apague o se desconecte del bus.
+                  </li>
+                  <li>10. El host recaba información sobre el dispositivo. El host envía la solicitud “Get_Descriptor” a la nueva dirección del dispositivo, a su “punto final” 0 y lee el descriptor completo del dispositivo. El host continúa recabando información solicitando uno o más descriptores de configuración especificados en el descriptor del dispositivo, y así sucesivamente con los descriptores de configuración subordinados definidos en sendos descriptores de configuración.</li>
+                  <li>11. El host asigna y carga un controlador software (“driver”) para el dispositivo. A excepción de los dispositivos combinados. Varía en función del sistema operativo, sin embargo, tras esta selección, el sistema operativo puede comunicarse directamente utilizando las clases del driver. 12. El controlador software selecciona la configuración. Tras escoger el controlador, éste solicita la configuración a través de la orden Set_Configuration. Este paso depende totalmente de la programación escogida y el dispositivo quedará listo para utilizarse.
+                  </li>
+                </ol>
+              </div>
+           
+          </article>
+          <article class="sextaParte">
+            <h3>Retiro del dispositivo
+            </h3>
+            <p>El host es informado por el hub de un evento al deshabilitar el puerto del dispositivo. El host entonces solicita la información del hub a través de la orden “Get_Port_Status” para obtener la información específica. Ahora el sistema operativo deberá eliminar el controlador del dispositivo del gestor.</p>
+          </article>
     </section>
     <!-- CONCLUSIONES -->
-    <section class="content conclusiones">
-      <section>
-
-      </section>
-
-
-
+    <section class="content conclusiones" id="conclusiones">
 
     </section>
-  </body>
+    <footer class="pie">
+      <p>SPD UTN - facultad regional mendoza 2020</p>
+      <p>profesor: Raúl Tonelli</p>
+      <p>tema a desarrollar elegido: JOYSTICK</p>
+      <p>Integrantes:
+        Kogan Moyano Julieta,
+        Najul Tagua Karim,
+        Rodriguez Arturo Fernando,
+        Tablón Francisco,
+        Zabala Diego,
+        Zavi Pablo Manuel,
+        </p>
+    </footer>
+  </body> 
 </html>
