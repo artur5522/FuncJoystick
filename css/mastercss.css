@@ -163,6 +163,8 @@ body {
   align-items: center;
   background: #213447;
   top: 0px;
+  width: 100%;
+  height: 50px;
   position: fixed;
 }
 .navbar {
@@ -176,7 +178,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   font: 20px "Stint Ultra Condensed";
-  transition: all 0.4s ease-in;  
+  transition: all 0.4s ease-in;
 }
 
 .navbar a:hover {
@@ -234,7 +236,10 @@ body {
 
 /* PARA FUNCION DE PC */
 .funcion-pc {
-  background: url(../images/ing-industrial1.jpg) no-repeat center top;
+  /* Saqué la imagen de fondo porque dificulta mucho al leer
+
+  background: url(../images/ing-industrial1.jpg) no-repeat center top;*/
+  background-color: #000000;
   background-size: cover;
   color: #fff;
 }
@@ -247,7 +252,7 @@ body {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  color: white;  
+  color: cornsilk;
 }
 .contain div p{
   border-bottom: orange dashed;
@@ -259,8 +264,8 @@ body {
 /* PARA DRIVERS */
 
 .driver{
-background-color: rgb(32, 32, 78);
-color: white;
+  background-color: rgb(32, 32, 78);
+  color: white;
 }
 .driver h2{
   box-shadow:  5px 5px 5px 5px rgb(167, 167, 212);
@@ -273,9 +278,10 @@ color: white;
   margin-bottom: 20px;
   color: aquamarine;
   border: azure dashed;
-} 
+}
+/* Saque opacity porque sino se superpone a la navbar */
 .primeraParte img{
-  opacity: 90%;
+
 }
 
 /* PROCESANDO SEÑALES DHI */
@@ -294,17 +300,17 @@ color: white;
 }
 .segundaParte ul li{
   display: flex;
-  border: solid salmon;  
+  border: solid salmon;
 }
 
 /* DISPOSITIVO CONECTADO A TRAVES DE USB */
 .terceraParte{
   margin: auto;
- padding: 50px;
+  padding: 50px;
   background-image: url(../images/img9.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .terceraParte h4{  
@@ -315,10 +321,10 @@ color: white;
 /* TRANSMISION DE DATOS ENTRE PC Y COMPU */
 .cuartaParte{
   background-image: url(../images/img10.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    padding: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 40px;
 }
 
 .intro-4taparte {
@@ -333,10 +339,12 @@ color: white;
 
 
 .desarrollo ul{
-margin-top: 25px;
+  margin-top: 25px;
+  position: static;
 }
+/* Saque opacity porque sino se superpone a la navbar */
 .desarrollo ul img {
-  opacity: 90%;
+
 }
 
 /* Paso a paso de una conexión dispositivo (periférico) - host (anfitrión) */
