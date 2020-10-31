@@ -162,7 +162,8 @@ body {
   justify-content: center;
   align-items: center;
   background: #213447;
- 
+  top: 0px;
+  position: fixed;
 }
 .navbar {
   height: 65px;
