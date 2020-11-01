@@ -102,7 +102,7 @@
             *HAL (siglas inglesas de Hardware Abstraction Layer) o Capa de abstracción de hardware es una aplicación que está constantemente funcionando de manera transparente al usuario (“demonio”), que permite a las aplicaciones un fácil acceso a la información sobre el hardware, de manera que puedan localizar y utilizar tal hardware independientemente del tipo de bus o dispositivo. De esta manera una Interfaz gráfica de usuario puede presentar a su usuario todos los recursos de una manera uniforme y completa</p>
           
         </div>
-        <img src="images/img6.jpg" alt="">
+        <img src="images/img6.png" alt="">
       </article>
     </section>
     <!-- DRIVERS -->
@@ -222,14 +222,21 @@
            
           </article>
           <article class="sextaParte">
-            <h3>Retiro del dispositivo
-            </h3>
+            <h3>Retiro del dispositivo</h3>
             <p>El host es informado por el hub de un evento al deshabilitar el puerto del dispositivo. El host entonces solicita la información del hub a través de la orden “Get_Port_Status” para obtener la información específica. Ahora el sistema operativo deberá eliminar el controlador del dispositivo del gestor.</p>
           </article>
     </section>
     <!-- CONCLUSIONES -->
     <section class="content conclusiones" id="conclusiones">
-
+      <h2 class="title">Conclusiones</h2>
+      <p>La mayoría de los joystick en la actualidad cuentan con un microcontrolador que recibe la información de la posición de la palanca y el switch (botón) la transmite a la computadora mediante una conexión (USB, por ejemplo), mientras el driver la convierte en ceros y unos, e inclusive, como se vió con los joystick modernos, recibe información de la computadora y la interpreta para realizar vibraciones, encendido de luces, etc. en el joystick.</p>
+      <p>El microcontrolador del joystick se encarga de procesar y convertir la información y, gracias a esto, permite no sobrecargar innecesariamente a la computadora de dichos procesos.</p>
+      <h3>Entonces, ¿ qué es un driver ?</h3>
+      <p>Un driver es un controlador de dispositivo o un módulo de kernel cargable que permite y administra la interacción entre el sistema operativo y un periférico. Estos módulos se cargan al momento del arranque o por solicitud y se descargan a solicitud. Hay que tener en cuenta que el software del mismo se ejecuta como parte del sistema operativo, es decir, tiene acceso a todo el dispositivo.</p>
+      <p>Pueden ser de dos tipos: orientados a caracteres o bien orientados a bloques, constituyendo las conocidas unidades de disco. La diferencia fundamental entre ambos tipos de controladores es que los primeros reciben o envían la información caracter a caracter; en cambio, los controladores de dispositivo de bloques procesan, como su propio nombre indica, bloques de cienta longitud en bytes (sectores).</p>
+      <h3>¿ Y cómo funciona ?</h3>
+      <p> El driver es un traductor entre el "idioma" del dispositivo y el de la computadora. Por ejemplo, cuando el sistema operativo necesita algo del dispositivo, le dice al driver lo que necesita, el driver lo interpreta y traduce al lenguaje del dispositivo, ejecutando éste la acción. Lo mismo pasa con el camino inverso, el dispositivo le transmite la información al driver (por ejemplo de que la palanca del joystick se movió al cuadrante superior izquierdo y efectuó un disparo) y el driver traduce y pasa la información al sismeta operativo.</p>
+      <img src="images/conclusion.png">
     </section>
     <footer class="pie">
       <p>SPD UTN - facultad regional mendoza 2020</p>
