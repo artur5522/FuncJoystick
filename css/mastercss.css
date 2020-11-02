@@ -260,6 +260,12 @@ body {
   border-bottom: orange dashed;
 }
 .contain img {
+
+
+  border-radius: 15%;
+  opacity: 80%;
+  margin-left: 30px;
+
 }
 /* PARA DRIVERS */
 
