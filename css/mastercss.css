@@ -219,15 +219,16 @@ body {
 }
 
 .primero {
-  display: inline-flex;
+  display: block;
 }
 
 .primero p {
   align-content: center;
   padding: 20px;
+  margin-top: -30px;
 }
 .primero img {
-  border-radius: 20%;
+  border-radius: 15%;
   max-height: 400px;
   padding: 25px;
 }
@@ -259,9 +260,12 @@ body {
   border-bottom: orange dashed;
 }
 .contain img {
+
+
   border-radius: 15%;
   opacity: 80%;
   margin-left: 30px;
+
 }
 /* PARA DRIVERS */
 
@@ -369,6 +373,18 @@ body {
   
 }
 
+.conclusiones {
+  background-color: #34495e;
+  text-align: center;
+  margin-top: -50px;
+  padding: 30px;
+  color: #fff;
+}
+
+.conclusiones h3{
+  color: #000000;
+  font-size: 30px;
+}
 
 /* PARA EL PIE */
 
@@ -376,7 +392,7 @@ body {
   background-color: rgb(66, 92, 112);
   display: flex;
   position: sticky;
-  bottom: 0;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   text-transform: uppercase;
@@ -388,4 +404,3 @@ body {
   border: 1px black solid;
   padding: 4px;
 }
-
