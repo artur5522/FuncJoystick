@@ -132,7 +132,7 @@ table {
 
 /* GENERAL */
 body {
-  text-align: center;
+  text-align: left;
   font: 300 20px/1.7 /* el 1.7 es interlineado*/ "Roboto Condensed";
   max-height: 100%; 
 }
@@ -142,6 +142,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align:center;
 } /* display justify content y aling items normalmente van juntos para alinear y centrar todo*/
 
 
@@ -150,10 +151,12 @@ body {
   background: url(../images/dummy-header.jpg) no-repeat center top;
   /*los .. son para decirle que suba un nivel en la carpeta, y el cover es para que cobra todo el ancho */
   background-size: cover;
+  
 }
 
 .header h1 img {
   border-radius: 50%;
+
 }
 
 /* NAVEGACION */
@@ -375,7 +378,7 @@ body {
 
 .conclusiones {
   background-color: #34495e;
-  text-align: center;
+  text-align: left;
   margin-top: -50px;
   padding: 30px;
   color: #fff;
@@ -404,6 +407,14 @@ body {
   border: 1px black solid;
   padding: 4px;
 }
+.bibliografia{
+  background: #7795b3;
+  color: #fff;
+  padding: 30px;
+
+  
+}
+
 
 #boton{
   display: none;
